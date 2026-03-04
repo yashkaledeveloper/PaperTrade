@@ -1,121 +1,93 @@
-# 📈 Paper Trading App
+## Paper Trading Platform
 
-🚀 A **full-stack paper trading platform** inspired by Zerodha Kite that allows users to simulate stock trading using virtual money.
+A full-stack paper trading application that simulates stock trading using virtual money.
 Users can place buy/sell orders, manage holdings, track positions, and view P&L using live or mock stock prices.
 
----
 
-## ✨ Features
+## Features
 
-### 🔐 Authentication & Authorization
+### Authentication
 
-* Secure user signup & login
+* User signup and login
 * JWT-based protected routes
 
-### 💰 Wallet System
+### Wallet
 
-* Default virtual balance for every user
-* Automatic balance updates on buy/sell
+* Default virtual balance per user
+* Automatic balance updates on trades
 
-### 🧾 Order Management
+### Orders
 
-* Market buy & sell order simulation
-* Order validation (balance & quantity checks)
-* Order status handling (Executed)
+* Market buy and sell order simulation
+* Balance and quantity validation
+* Executed order tracking
 
-### 📦 Portfolio Management
+### Portfolio
 
 * Holdings with average buy price calculation
-* Positions with unrealized & realized P&L
-* Auto updates after each trade
+* Realized and unrealized P&L
+* Automatic updates after each trade
 
-### 📊 Data Visualization
+### Visualization
 
-* 📊 Bar charts & 🍩 Doughnut charts
-* Portfolio-level insights
+* Portfolio distribution charts
+* Performance insights
 
-### 📉 Stock Prices
+### Stock Prices
 
-* Live stock prices using free APIs
-* Fallback to mock price updates for simulation
+* Live prices via free APIs
+* Mock price fallback for simulation
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
-  - React Js
-  - Matrial UI
-  - Javascript
-  - Axios
+
+* React
+* Material UI
+* JavaScript
+* Axios
 
 ### Backend
 
-  - Node Js
-  - Express Js
-  - MongoDB
+* Node.js
+* Express.js
+* MongoDB
 
 ---
 
-## 🧠 Core Logic (High Level)
+## Core Trade Logic
 
-### 🟢 Buy Order Flow
+### Buy Order
 
-* Validate user & wallet balance
+* Validate user and wallet balance
 * Fetch current stock price
-* Deduct wallet balance
-* Create or update holding (avg price logic)
+* Deduct balance
+* Create or update holding with average price
 * Mark order as executed
 
-### 🔴 Sell Order Flow
+### Sell Order
 
 * Validate holding quantity
-* Add sell value to wallet
+* Credit wallet balance
 * Update or remove holding
 * Calculate realized P&L
 
 ---
 
-## 🗃 Database Models
+### Database Models
 
-* 👤 User
-* 💰 Wallet
-* 🧾 Orders
-* 📦 Holdings
+* User
+* Wallet
+* Order
+* Holding
 
-Separated models ensure clean architecture and scalability.
-
----
-
-## 📸 Screenshots
-
-📌 *Add screenshots here:*
-
-* Landing Page
-* Trading Dashboard
-* Buy / Sell Modal
-* Holdings & Charts
+Models are separated to maintain clarity and scalability.
 
 ---
 
-## 🔮 Future Enhancements
+### Disclaimer
 
-* 📌 Limit orders
-* ⚡ WebSocket-based real-time prices
-* 📈 Advanced trade analytics
-* 🛡 Admin monitoring dashboard
-
----
-
-## ⚠️ Disclaimer
-
-This is a **paper trading (simulation) application**.
-❌ No real money
-❌ No real stock trading
-
----
-
-## 👨‍💻 Author
-
-**Yeshu**
-Aspiring Full-Stack Developer 🚀
+This is a paper trading simulation.
+No real money. No real trading.
