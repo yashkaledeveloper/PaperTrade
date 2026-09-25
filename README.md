@@ -1,93 +1,93 @@
-## Paper Trading Platform
+# Paper Trading Platform
 
-A full-stack paper trading application that simulates stock trading using virtual money.
-Users can place buy/sell orders, manage holdings, track positions, and view P&L using live or mock stock prices.
+A full-stack **paper trading application** that simulates stock trading using virtual money. Users can securely manage their wallet, place buy/sell orders, track holdings, and monitor realized/unrealized P&L using live or mock stock prices.
 
+## Key Features
 
-## Features
-
-### Authentication
-
-* User signup and login
-* JWT-based protected routes
-
-### Wallet
-
-* Default virtual balance per user
-* Automatic balance updates on trades
-
-### Orders
-
-* Market buy and sell order simulation
-* Balance and quantity validation
-* Executed order tracking
-
-### Portfolio
-
-* Holdings with average buy price calculation
-* Realized and unrealized P&L
-* Automatic updates after each trade
-
-### Visualization
-
-* Portfolio distribution charts
-* Performance insights
-
-### Stock Prices
-
-* Live prices via free APIs
-* Mock price fallback for simulation
-
----
+* **Authentication:** User signup/login with JWT-based protected routes.
+* **Virtual Wallet:** Default virtual balance with automatic updates after trades.
+* **Trading:** Market buy/sell simulation with balance and quantity validation.
+* **Portfolio Management:** Holdings, average buy price, realized P&L, and unrealized P&L.
+* **Visualization:** Portfolio distribution and performance insights.
+* **Stock Prices:** Live market prices through free APIs with mock-price fallback.
+* **Order Tracking:** Maintains executed trade history for each user.
 
 ## Tech Stack
 
-### Frontend
+**Frontend:** React, Material UI, JavaScript, Axios
+**Backend:** Node.js, Express.js
+**Database:** MongoDB
+**Authentication:** JWT
 
-* React
-* Material UI
-* JavaScript
-* Axios
+## Core Trade Flow
 
-### Backend
+**Buy:** Validate user → Fetch stock price → Validate balance → Deduct balance → Create/update holding → Record executed order.
 
-* Node.js
-* Express.js
-* MongoDB
+**Sell:** Validate holding → Fetch stock price → Credit wallet → Update/remove holding → Calculate realized P&L → Record executed order.
 
----
+## Database Models
 
-## Core Trade Logic
+* `User` — authentication and user information
+* `Wallet` — virtual balance
+* `Order` — executed buy/sell transactions
+* `Holding` — current portfolio positions
 
-### Buy Order
+Models are separated to keep the application modular and scalable.
 
-* Validate user and wallet balance
-* Fetch current stock price
-* Deduct balance
-* Create or update holding with average price
-* Mark order as executed
+## Installation & Running
 
-### Sell Order
+### 1. Clone the repository
 
-* Validate holding quantity
-* Credit wallet balance
-* Update or remove holding
-* Calculate realized P&L
+```bash
+git clone https://github.com/yashkaledeveloper/PaperTrade.git
+cd paper-trading-platform
+```
 
----
+### 2. Backend Setup
 
-### Database Models
+```bash
+cd backend
+npm install
+```
 
-* User
-* Wallet
-* Order
-* Holding
+Create a `.env` file:
 
-Models are separated to maintain clarity and scalability.
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
----
+Start the backend:
 
-### Disclaimer
+```bash
+npm run dev
+```
 
-This is a paper trading simulation.
-No real money. No real trading.
+### 3. Frontend Setup
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The application will be available at the URL shown by Vite, usually:
+
+```text
+http://localhost:5173
+```
+
+Backend API runs on:
+
+```text
+http://localhost:5000
+```
+
+## Project Highlights
+
+This project demonstrates **full-stack development, REST API design, JWT authentication, MongoDB data modeling, transaction logic, portfolio calculations, API integration, and responsive React UI development**.
+
+> **Disclaimer:** This is a paper trading simulation using virtual money. It does not execute real trades or involve real money.
